@@ -243,7 +243,7 @@ const ProfileScreen = ({ navigation }) => {
       >
         <View style={{ flex: 1, flexDirection: "row", alignItems: "center" }}>
           <Image
-            source={require("../../assets/images/users/user7.png")}
+            source={require("../../assets/images/users/logo1.png")}
             style={{
               width: 60.0,
               height: 60.0,
@@ -251,8 +251,8 @@ const ProfileScreen = ({ navigation }) => {
             }}
           />
           <View style={{ flex: 1, marginLeft: Sizes.fixPadding }}>
-            <Text style={{ ...Fonts.blackColor15SemiBold }}>Devin Shah</Text>
-            <Text style={{ ...Fonts.grayColor12Medium }}>(+91) 1234567890</Text>
+            <Text style={{ ...Fonts.blackColor15SemiBold }}>Las Vegas complext</Text>
+            <Text style={{ ...Fonts.grayColor12Medium }}>+237 677227392</Text>
           </View>
         </View>
         <MaterialIcons

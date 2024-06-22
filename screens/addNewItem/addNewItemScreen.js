@@ -8,9 +8,9 @@ import MyStatusBar from "../../components/myStatusBar";
 
 const { width } = Dimensions.get('window');
 
-const categoryList = ['Fast Food', 'Starter', 'Main Course', 'Dessert'];
+const categoryList = ['Fast Food', 'Drinks'];
 
-const foodTypeList = ['Veg', 'Non Veg'];
+// const foodTypeList = ['Veg', 'Non Veg'];
 
 const AddNewItemScreen = ({ navigation }) => {
 
@@ -20,7 +20,7 @@ const AddNewItemScreen = ({ navigation }) => {
         selectedItemCategory: null,
         itemPrice: null,
         offerPrice: null,
-        selectedFoodType: null,
+        // selectedFoodType: null,
         specification1Value: null,
         specification1Amount: null,
         specification2Value: null,
@@ -39,7 +39,7 @@ const AddNewItemScreen = ({ navigation }) => {
         selectedItemCategory,
         itemPrice,
         offerPrice,
-        selectedFoodType,
+        // selectedFoodType,
         specification1Value,
         specification1Amount,
         specification2Value,
@@ -60,7 +60,7 @@ const AddNewItemScreen = ({ navigation }) => {
                     {itemNameInfo()}
                     {itemCategoryInfo()}
                     {itemPriceAndOfferPriceInfo()}
-                    {foodTypeInfo()}
+                    {/* {foodTypeInfo()} */}
                     {specifictionsInfo()}
                     {descriptionInfo()}
                     {cancelAndSaveButton()}
@@ -146,18 +146,16 @@ const AddNewItemScreen = ({ navigation }) => {
                 <TextInput
                     value={specification3Value}
                     onChangeText={(value) => updateState({ specification3Value: value })}
-                    placeholder={"Extra Veggies"}
+                    placeholder={"Extra Vegitables"}
                     placeholderTextColor={Colors.grayColor}
                     style={{ ...Fonts.grayColor14Medium, flex: 1, }}
                     cursorColor={Colors.primaryColor}
                     selectionColor={Colors.primaryColor}
                 />
                 <View style={{ flex: 0.2, flexDirection: 'row', alignItems: 'center' }}>
-                    <Text style={{ ...Fonts.grayColor14Medium, }}>
-                        $
-                    </Text>
+                    
                     <TextInput
-                        placeholder="1.50"
+                        placeholder="500.00"
                         keyboardType='numeric'
                         value={specification3Amount}
                         onChangeText={(value) => updateState({ specification3Amount: value })}
@@ -184,11 +182,9 @@ const AddNewItemScreen = ({ navigation }) => {
                     selectionColor={Colors.primaryColor}
                 />
                 <View style={{ flex: 0.2, flexDirection: 'row', alignItems: 'center' }}>
-                    <Text style={{ ...Fonts.grayColor14Medium, }}>
-                        $
-                    </Text>
+                   
                     <TextInput
-                        placeholder="2.00"
+                        placeholder="100.00"
                         keyboardType='numeric'
                         value={specification2Amount}
                         onChangeText={(value) => updateState({ specification2Amount: value })}
@@ -208,18 +204,16 @@ const AddNewItemScreen = ({ navigation }) => {
                 <TextInput
                     value={specification1Value}
                     onChangeText={(value) => updateState({ specification1Value: value })}
-                    placeholder={"Extra Cheese"}
+                    placeholder={"Extra Chicken"}
                     placeholderTextColor={Colors.grayColor}
                     style={{ ...Fonts.grayColor14Medium, flex: 1, }}
                     cursorColor={Colors.primaryColor}
                     selectionColor={Colors.primaryColor}
                 />
                 <View style={{ flex: 0.2, flexDirection: 'row', alignItems: 'center' }}>
-                    <Text style={{ ...Fonts.grayColor14Medium, }}>
-                        $
-                    </Text>
+                    
                     <TextInput
-                        placeholder="3.00"
+                        placeholder="500.00"
                         keyboardType='numeric'
                         value={specification1Amount}
                         onChangeText={(value) => updateState({ specification1Amount: value })}
@@ -233,36 +227,36 @@ const AddNewItemScreen = ({ navigation }) => {
         )
     }
 
-    function foodTypeInfo() {
-        const renderItem = ({ item }) => (
-            <TouchableOpacity
-                activeOpacity={0.9}
-                onPress={() => updateState({ selectedFoodType: item })}
-                style={{
-                    backgroundColor: selectedFoodType == item ? Colors.primaryColor : Colors.whiteColor,
-                    ...styles.foodTypeWrapStyle,
-                }}>
-                <Text style={selectedFoodType == item ? { ...Fonts.whiteColor12SemiBold } : { ...Fonts.grayColor12Regular }}>
-                    {item}
-                </Text>
-            </TouchableOpacity>
-        )
-        return (
-            <View style={{ marginHorizontal: Sizes.fixPadding * 2.0, }}>
-                <Text style={{ marginBottom: Sizes.fixPadding, ...Fonts.blackColor14SemiBold }}>
-                    Food Type
-                </Text>
-                <FlatList
-                    horizontal
-                    showsHorizontalScrollIndicator={false}
-                    data={foodTypeList}
-                    keyExtractor={(item, index) => `${index}`}
-                    renderItem={renderItem}
-                    contentContainerStyle={{ paddingHorizontal: Sizes.fixPadding - 8.0, paddingBottom: Sizes.fixPadding - 8.0, }}
-                />
-            </View>
-        )
-    }
+    // function foodTypeInfo() {
+    //     const renderItem = ({ item }) => (
+    //         <TouchableOpacity
+    //             activeOpacity={0.9}
+    //             onPress={() => updateState({ selectedFoodType: item })}
+    //             style={{
+    //                 backgroundColor: selectedFoodType == item ? Colors.primaryColor : Colors.whiteColor,
+    //                 ...styles.foodTypeWrapStyle,
+    //             }}>
+    //             <Text style={selectedFoodType == item ? { ...Fonts.whiteColor12SemiBold } : { ...Fonts.grayColor12Regular }}>
+    //                 {item}
+    //             </Text>
+    //         </TouchableOpacity>
+    //     )
+    //     return (
+    //         <View style={{ marginHorizontal: Sizes.fixPadding * 2.0, }}>
+    //             <Text style={{ marginBottom: Sizes.fixPadding, ...Fonts.blackColor14SemiBold }}>
+    //                 Food Type
+    //             </Text>
+    //             <FlatList
+    //                 horizontal
+    //                 showsHorizontalScrollIndicator={false}
+    //                 data={foodTypeList}
+    //                 keyExtractor={(item, index) => `${index}`}
+    //                 renderItem={renderItem}
+    //                 contentContainerStyle={{ paddingHorizontal: Sizes.fixPadding - 8.0, paddingBottom: Sizes.fixPadding - 8.0, }}
+    //             />
+    //         </View>
+    //     )
+    // }
 
     function itemPriceAndOfferPriceInfo() {
         return (
@@ -275,7 +269,7 @@ const AddNewItemScreen = ({ navigation }) => {
                         value={itemPrice}
                         onChangeText={(value) => updateState({ itemPrice: value })}
                         keyboardType="numeric"
-                        placeholder="eg. $6.00"
+                        placeholder="eg. 1500.00"
                         placeholderTextColor={Colors.grayColor}
                         style={{ ...styles.textFieldWrapStyle }}
                         cursorColor={Colors.primaryColor}
@@ -290,7 +284,7 @@ const AddNewItemScreen = ({ navigation }) => {
                         value={offerPrice}
                         onChangeText={(value) => updateState({ offerPrice: value })}
                         keyboardType="numeric"
-                        placeholder="eg. $5.00"
+                        placeholder="eg. 1000.00"
                         placeholderTextColor={Colors.grayColor}
                         style={{ ...styles.textFieldWrapStyle }}
                         cursorColor={Colors.primaryColor}

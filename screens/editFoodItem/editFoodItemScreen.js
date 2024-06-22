@@ -8,20 +8,20 @@ import MyStatusBar from "../../components/myStatusBar";
 
 const { width } = Dimensions.get('window');
 
-const categoryList = ['Fast Food', 'Starter', 'Main Course', 'Dessert'];
+const categoryList = ['Fast Food', 'Drinks'];
 
-const foodTypeList = ['Veg', 'Non Veg'];
+// const foodTypeList = ['Veg', 'Non Veg'];
 
 const EditFoodItemScreen = ({ navigation, route }) => {
 
     const id = route.params.id;
 
     const [state, setState] = useState({
-        foodName: 'Sandwich',
+        foodName: 'Fried Rice',
         showCategoryOptions: false,
         selectedItemCategory: categoryList[0],
-        itemPrice: '6.0',
-        selectedFoodType: foodTypeList[0],
+        itemPrice: '1000.0',
+        // selectedFoodType: foodTypeList[0],
         specification1Value: null,
         specification1Amount: null,
         specification2Value: null,
@@ -38,7 +38,7 @@ const EditFoodItemScreen = ({ navigation, route }) => {
         showCategoryOptions,
         selectedItemCategory,
         itemPrice,
-        selectedFoodType,
+        // selectedFoodType,
         specification1Value,
         specification1Amount,
         specification2Value,
@@ -58,7 +58,7 @@ const EditFoodItemScreen = ({ navigation, route }) => {
                     {itemNameInfo()}
                     {itemCategoryInfo()}
                     {itemPriceInfo()}
-                    {foodTypeInfo()}
+                    {/* {foodTypeInfo()} */}
                     {specifictionsInfo()}
                     {cancelAndSaveButton()}
                 </ScrollView>
@@ -159,18 +159,16 @@ const EditFoodItemScreen = ({ navigation, route }) => {
                 <TextInput
                     value={specification3Value}
                     onChangeText={(value) => updateState({ specification3Value: value })}
-                    placeholder={"Extra Veggies"}
+                    placeholder={"Extra Vegitables"}
                     placeholderTextColor={Colors.grayColor}
                     style={{ ...Fonts.grayColor14Medium, flex: 1, }}
                     cursorColor={Colors.primaryColor}
                     selectionColor={Colors.primaryColor}
                 />
                 <View style={{ flex: 0.2, flexDirection: 'row', alignItems: 'center' }}>
-                    <Text style={{ ...Fonts.grayColor14Medium, }}>
-                        $
-                    </Text>
+                    
                     <TextInput
-                        placeholder="1.50"
+                        placeholder="500.0"
                         keyboardType='numeric'
                         value={specification3Amount}
                         onChangeText={(value) => updateState({ specification3Amount: value })}
@@ -197,11 +195,9 @@ const EditFoodItemScreen = ({ navigation, route }) => {
                     selectionColor={Colors.primaryColor}
                 />
                 <View style={{ flex: 0.2, flexDirection: 'row', alignItems: 'center' }}>
-                    <Text style={{ ...Fonts.grayColor14Medium, }}>
-                        $
-                    </Text>
+                    
                     <TextInput
-                        placeholder="2.00"
+                        placeholder="100.0"
                         keyboardType='numeric'
                         value={specification2Amount}
                         onChangeText={(value) => updateState({ specification2Amount: value })}
@@ -221,18 +217,16 @@ const EditFoodItemScreen = ({ navigation, route }) => {
                 <TextInput
                     value={specification1Value}
                     onChangeText={(value) => updateState({ specification1Value: value })}
-                    placeholder={"Extra Cheese"}
+                    placeholder={"Extra Chicken"}
                     placeholderTextColor={Colors.grayColor}
                     style={{ ...Fonts.grayColor14Medium, flex: 1, }}
                     cursorColor={Colors.primaryColor}
                     selectionColor={Colors.primaryColor}
                 />
                 <View style={{ flex: 0.2, flexDirection: 'row', alignItems: 'center' }}>
-                    <Text style={{ ...Fonts.grayColor14Medium, }}>
-                        $
-                    </Text>
+                    
                     <TextInput
-                        placeholder="3.00"
+                        placeholder="500.0"
                         keyboardType='numeric'
                         value={specification1Amount}
                         onChangeText={(value) => updateState({ specification1Amount: value })}
@@ -246,36 +240,36 @@ const EditFoodItemScreen = ({ navigation, route }) => {
         )
     }
 
-    function foodTypeInfo() {
-        const renderItem = ({ item }) => (
-            <TouchableOpacity
-                activeOpacity={0.9}
-                onPress={() => updateState({ selectedFoodType: item })}
-                style={{
-                    backgroundColor: selectedFoodType == item ? Colors.primaryColor : Colors.whiteColor,
-                    ...styles.foodTypeWrapStyle,
-                }}>
-                <Text style={selectedFoodType == item ? { ...Fonts.whiteColor12SemiBold } : { ...Fonts.grayColor12Regular }}>
-                    {item}
-                </Text>
-            </TouchableOpacity>
-        )
-        return (
-            <View style={{ marginHorizontal: Sizes.fixPadding * 2.0, }}>
-                <Text style={{ marginBottom: Sizes.fixPadding, ...Fonts.blackColor14SemiBold }}>
-                    Food Type
-                </Text>
-                <FlatList
-                    horizontal
-                    showsHorizontalScrollIndicator={false}
-                    data={foodTypeList}
-                    keyExtractor={(item, index) => `${index}`}
-                    renderItem={renderItem}
-                    contentContainerStyle={{ paddingHorizontal: Sizes.fixPadding - 8.0, paddingBottom: Sizes.fixPadding - 8.0, }}
-                />
-            </View>
-        )
-    }
+    // function foodTypeInfo() {
+    //     const renderItem = ({ item }) => (
+    //         <TouchableOpacity
+    //             activeOpacity={0.9}
+    //             onPress={() => updateState({ selectedFoodType: item })}
+    //             style={{
+    //                 backgroundColor: selectedFoodType == item ? Colors.primaryColor : Colors.whiteColor,
+    //                 ...styles.foodTypeWrapStyle,
+    //             }}>
+    //             <Text style={selectedFoodType == item ? { ...Fonts.whiteColor12SemiBold } : { ...Fonts.grayColor12Regular }}>
+    //                 {item}
+    //             </Text>
+    //         </TouchableOpacity>
+    //     )
+    //     return (
+    //         <View style={{ marginHorizontal: Sizes.fixPadding * 2.0, }}>
+    //             <Text style={{ marginBottom: Sizes.fixPadding, ...Fonts.blackColor14SemiBold }}>
+    //                 Food Type
+    //             </Text>
+    //             <FlatList
+    //                 horizontal
+    //                 showsHorizontalScrollIndicator={false}
+    //                 data={foodTypeList}
+    //                 keyExtractor={(item, index) => `${index}`}
+    //                 renderItem={renderItem}
+    //                 contentContainerStyle={{ paddingHorizontal: Sizes.fixPadding - 8.0, paddingBottom: Sizes.fixPadding - 8.0, }}
+    //             />
+    //         </View>
+    //     )
+    // }
 
     function itemPriceInfo() {
         return (
@@ -288,11 +282,7 @@ const EditFoodItemScreen = ({ navigation, route }) => {
                     keyboardType='numeric'
                     value={itemPrice}
                     onChangeText={(text) => updateState({ itemPrice: text })}
-                    leftIcon={
-                        <Text style={{ ...Fonts.grayColor14Medium, }}>
-                            $
-                        </Text>
-                    }
+                    
                     style={{ marginLeft: Sizes.fixPadding - 12.0, ...Fonts.grayColor14Medium, }}
                     inputContainerStyle={{
                         ...styles.priceFieldWrapStyle,
@@ -378,7 +368,7 @@ const EditFoodItemScreen = ({ navigation, route }) => {
                         style={styles.itemImageWrapStyle}
                     >
                         <Image
-                            source={require('../../assets/images/food/food2.png')}
+                            source={require('../../assets/images/food/food18.png')}
                             style={{
                                 width: '100%',
                                 height: '100%',

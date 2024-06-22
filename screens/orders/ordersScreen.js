@@ -10,84 +10,74 @@ const { width } = Dimensions.get('window');
 const dialogOrderItemsList = [
     {
         id: '1',
-        foodName: 'Veg Sandwich',
+        foodName: 'Fried Rice',
         qty: 1,
-        totalAmount: 6.00,
+        totalAmount: 1000.00,
     },
     {
         id: '2',
-        foodName: 'Veg Frankie',
+        foodName: 'Fufu and Kati kati',
         qty: 1,
-        totalAmount: 10.00,
+        totalAmount: 1500.00,
     },
     {
         id: '3',
-        foodName: 'Margherite Pizza',
+        foodName: 'Hot pot Irish',
         qty: 1,
-        totalAmount: 12.00,
+        totalAmount: 1500.00,
     },
 ];
 
 const newOrdersList = [
     {
         id: '1',
-        orderGiverImage: require('../../assets/images/users/user5.png'),
-        orderGiverName: 'Samantha John',
+        orderGiverImage: require('../../assets/images/users/user1.png'),
+        orderGiverName: 'Jeannoel',
         orderDate: 'Today',
         orderTime: '12:05 am',
         orderId: 'ACR123654',
-        totalPayment: 42.00,
+        totalPayment: 4500.00,
         orderItemsList: [
             {
                 id: 'i1',
-                foodName: 'Veg Sandwich',
+                foodName: 'Fried Rice',
                 qty: 1,
-                totalAmount: 6.00,
+                totalAmount: 1000.00,
             },
             {
                 id: 'i2',
-                foodName: 'Veg Frankie',
+                foodName: 'Hot pot Irish',
                 qty: 2,
-                totalAmount: 20.00,
+                totalAmount: 3000.00,
             },
-            {
-                id: 'i3',
-                foodName: 'Margherite Pizza',
-                qty: 1,
-                totalAmount: 12.00,
-            },
+            
         ],
-        note: 'Hi, please pack green sauce in my order and please tell your delivery boy that he have to come on 2nd floor because i\'m not at home.'
+        // note: 'Hi, please pack green sauce in my order and please tell your delivery boy that he have to come on 2nd floor because i\'m not at home.'
     },
     {
         id: '2',
-        orderGiverImage: require('../../assets/images/users/user6.png'),
-        orderGiverName: 'Krish Doe',
+        orderGiverImage: require('../../assets/images/users/user3.png'),
+        orderGiverName: 'Nfon Joseph',
         orderDate: 'Today',
-        orderTime: '12:01 am',
+        orderTime: '11:01 am',
         orderId: 'ACR123654',
-        totalPayment: 42.00,
+        totalPayment: 3000.00,
         orderItemsList: [
             {
                 id: 'i1',
-                foodName: 'Veg Sandwich',
+                foodName: 'Fried Rice',
                 qty: 1,
-                totalAmount: 6.00,
+                totalAmount: 1000.00,
             },
             {
                 id: 'i2',
-                foodName: 'Veg Frankie',
-                qty: 2,
-                totalAmount: 20.00,
-            },
-            {
-                id: 'i3',
-                foodName: 'Margherite Pizza',
+                foodName: 'Fufu and Kati kati',
                 qty: 1,
-                totalAmount: 12.00,
+                totalAmount: 1500.00,
             },
+            
         ],
-        note: 'Hi, please pack green sauce in my order and please tell your delivery boy that he have to come on 2nd floor because i\'m not at home.'
+        note: 'Hi, please add enough pepper in my order and please tell your delivery boy that he have to come on 2nd floor because i\'m not at home.'
     }
 ];
 
@@ -1024,7 +1014,7 @@ const OrdersScreen = ({ navigation }) => {
                             />
                             <View style={{ flex: 1, marginLeft: Sizes.fixPadding, }}>
                                 <Text numberOfLines={1} style={{ ...Fonts.blackColor15SemiBold }}>
-                                    Samantha John
+                                    Jeannoel
                                 </Text>
                                 <Text style={{ ...Fonts.blackColor11Medium }}>
                                     Today at 12:05 am
@@ -1036,7 +1026,7 @@ const OrdersScreen = ({ navigation }) => {
                                 Order Id: ACR123654
                             </Text>
                             <Text style={{ ...Fonts.blackColor11Medium }}>
-                                Total Payment: $42.00
+                                Total: 4500.00 XAF
                             </Text>
                         </View>
                     </View>
@@ -1050,7 +1040,7 @@ const OrdersScreen = ({ navigation }) => {
                                 size={16}
                             />
                             <Text style={{ marginLeft: Sizes.fixPadding, ...Fonts.blackColor11Medium }}>
-                                (+91) 1234567890
+                                +237 680787547
                             </Text>
                         </View>
 
@@ -1061,7 +1051,7 @@ const OrdersScreen = ({ navigation }) => {
                                 size={16}
                             />
                             <Text style={{ marginLeft: Sizes.fixPadding, ...Fonts.blackColor11Medium }}>
-                                {`B 441, Old city town, Leminton street\nNear City Part, Washington DC,\nUnites States Of America`}
+                                {`Standard lodge, Bambili`}
                             </Text>
                         </View>
 
@@ -1072,7 +1062,7 @@ const OrdersScreen = ({ navigation }) => {
                                 size={16}
                             />
                             <Text style={{ marginLeft: Sizes.fixPadding, ...Fonts.blackColor11Medium }}>
-                                johnsamantha@gmail.com
+                                nfonjeannoel1@gmail.com
                             </Text>
                         </View>
 
@@ -1083,7 +1073,7 @@ const OrdersScreen = ({ navigation }) => {
                                 Note: { }
                             </Text>
                             <Text style={{ ...Fonts.grayColor8Medium }}>
-                                Hi, please pack green sauce in my order and please tell your delivery boy that he have to come on 2nd floor because i'm not at home.
+                                Hi, please pack pepper in my order and please tell your delivery boy that he have to come on 2nd floor because i'm not at home.
                             </Text>
                         </Text>
 
@@ -1133,12 +1123,12 @@ const OrdersScreen = ({ navigation }) => {
                         </View>
 
                         <View style={styles.serviceTaxInfoWrapStyle}>
-                            <Text style={{ ...Fonts.grayColor11Medium }}>
+                            {/* <Text style={{ ...Fonts.grayColor11Medium }}>
                                 Service Tax:{` `}
                             </Text>
                             <Text style={{ ...Fonts.blackColor11Medium }}>
                                 $2.50
-                            </Text>
+                            </Text> */}
                         </View>
 
                         <View style={styles.deliveryChargeInfoWrapStyle}>
@@ -1146,7 +1136,7 @@ const OrdersScreen = ({ navigation }) => {
                                 Delivery Charge:{` `}
                             </Text>
                             <Text style={{ ...Fonts.blackColor11Medium }}>
-                                $1.50
+                                500.00
                             </Text>
                         </View>
 
@@ -1212,7 +1202,7 @@ const OrdersScreen = ({ navigation }) => {
                             Order Id: {item.orderId}
                         </Text>
                         <Text style={{ ...Fonts.blackColor11Medium }}>
-                            Total Payment: {`$`}{item.totalPayment.toFixed(2)}
+                            Total: {item.totalPayment.toFixed(2)}{` XAF`}
                         </Text>
                     </View>
                 </View>
@@ -1245,7 +1235,7 @@ const OrdersScreen = ({ navigation }) => {
                                         {orderItem.qty}
                                     </Text>
                                     <Text style={{ width: 70.0, textAlign: 'right', ...Fonts.blackColor11Medium }}>
-                                        {`$`}{orderItem.totalAmount.toFixed(2)}
+                                        {orderItem.totalAmount.toFixed(2)}
                                     </Text>
                                 </View>
                             </View>
@@ -1257,17 +1247,17 @@ const OrdersScreen = ({ navigation }) => {
                             TotalAmount
                         </Text>
                         <Text style={{ ...Fonts.blackColor11Medium, }}>
-                            {`$`}{item.orderItemsList.reduce((s, { totalAmount }) => s + totalAmount, 0).toFixed(2)}
+                            {item.orderItemsList.reduce((s, { totalAmount }) => s + totalAmount, 0).toFixed(2)}
                         </Text>
                     </View>
 
                     <View style={styles.serviceTaxInfoWrapStyle}>
-                        <Text style={{ ...Fonts.grayColor11Medium }}>
+                        {/* <Text style={{ ...Fonts.grayColor11Medium }}>
                             Service Tax:{` `}
                         </Text>
                         <Text style={{ ...Fonts.blackColor11Medium }}>
                             $2.50
-                        </Text>
+                        </Text> */}
                     </View>
 
                     <View style={styles.deliveryChargeInfoWrapStyle}>
@@ -1275,7 +1265,7 @@ const OrdersScreen = ({ navigation }) => {
                             Delivery Charge:{` `}
                         </Text>
                         <Text style={{ ...Fonts.blackColor11Medium }}>
-                            $1.50
+                            500
                         </Text>
                     </View>
 

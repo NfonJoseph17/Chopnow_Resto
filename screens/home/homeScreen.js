@@ -18,43 +18,43 @@ import Dialog from "react-native-dialog";
 
 const { width } = Dimensions.get("window");
 
-const categoriesList = ["Fast food", "Starter", "Main Course", "Dessert"];
+const categoriesList = ["Fast food", "Drinks"];
 
 const popularItemsList = [
   {
     id: "1",
-    foodImage: require("../../assets/images/food/food2.png"),
-    foodName: "Veg Cheese Sandwich",
-    amount: 7.0,
+    foodImage: require("../../assets/images/food/food13.png"),
+    foodName: "Fufu and Kati kati",
+    amount: 1500.00,
   },
   {
     id: "2",
-    foodImage: require("../../assets/images/food/food3.png"),
-    foodName: "Veg Frankie",
-    amount: 6.0,
+    foodImage: require("../../assets/images/food/food18.png"),
+    foodName: "Fried Rice and chicken",
+    amount: 1000.00,
   },
 ];
 
 const availableFoodList = [
   {
     id: "1",
-    foodImage: require("../../assets/images/food/food2.png"),
-    foodName: "Veg Sandwich",
-    amount: 6.0,
-    customizable: true,
+    foodImage: require("../../assets/images/food/food19.png"),
+    foodName: "Hot pot irish",
+    amount: 1500.0,
+    customizable: false,
   },
   {
     id: "2",
-    foodImage: require("../../assets/images/food/food4.png"),
-    foodName: "Veg Frankie",
-    amount: 10.0,
+    foodImage: require("../../assets/images/food/food13.png"),
+    foodName: "Fufu and Kati kati",
+    amount: 1500.0,
     customizable: false,
   },
   {
     id: "3",
-    foodImage: require("../../assets/images/food/food5.png"),
-    foodName: "Margherite Pizza",
-    amount: 12.0,
+    foodImage: require("../../assets/images/food/food18.png"),
+    foodName: "Fried rice and chicken",
+    amount: 1000.0,
     customizable: true,
   },
 ];
@@ -218,8 +218,8 @@ const HomeScreen = ({ navigation }) => {
                 ...Fonts.blackColor12SemiBold,
               }}
             >
-              {`$`}
-              {item.amount.toFixed(2)}
+              
+              {item.amount.toFixed(2)}{` XAF`}
             </Text>
             {item.customizable ? (
               <Text style={{ ...Fonts.primaryColor14Medium }}>Customise</Text>
@@ -263,7 +263,7 @@ const HomeScreen = ({ navigation }) => {
         <FlatList
           scrollEnabled={false}
           data={availableFoods}
-          keyExtractor={(item) => `${item.id}`}
+          keyExtractor={(item) => `{item.id} XAF`}
           renderItem={renderItem}
           showsVerticalScrollIndicator={false}
         />
@@ -285,7 +285,7 @@ const HomeScreen = ({ navigation }) => {
         >
           {categoriesList.map((item, index) => (
             <View
-              key={`${index}`}
+              key={`{index} XAF`}
               style={{
                 marginRight: Sizes.fixPadding * 2.0,
                 alignItems: "center",
@@ -331,7 +331,7 @@ const HomeScreen = ({ navigation }) => {
               { } | { }
             </Text>
             <Text style={{ ...Fonts.primaryColor12SemiBold }}>
-              {`$`}
+              
               {item.amount.toFixed(2)}
             </Text>
           </Text>
@@ -350,7 +350,7 @@ const HomeScreen = ({ navigation }) => {
         </Text>
         <FlatList
           data={popularItemsList}
-          keyExtractor={(item) => `${item.id}`}
+          keyExtractor={(item) => `{item.id}`}
           renderItem={renderItem}
           horizontal
           showsHorizontalScrollIndicator={false}
@@ -382,7 +382,7 @@ const HomeScreen = ({ navigation }) => {
                   numberOfLines={1}
                   style={{ ...Fonts.blackColor14SemiBold }}
                 >
-                  Marine Rise Restaurant
+                  Las Vegas Complext
                 </Text>
               </View>
             </View>
@@ -408,7 +408,7 @@ const HomeScreen = ({ navigation }) => {
               ...Fonts.grayColor14Medium,
             }}
           >
-            Fast food, Italian, Chinese
+            Fast food, drinks
           </Text>
           <View
             style={{
@@ -429,7 +429,7 @@ const HomeScreen = ({ navigation }) => {
                 ...Fonts.grayColor13Medium,
               }}
             >
-              2.5 | 1124, ghsyte ghyrths jku
+              3-Conners, Bambili
             </Text>
           </View>
         </View>
@@ -443,8 +443,7 @@ const HomeScreen = ({ navigation }) => {
               ...Fonts.grayColor12Regular,
             }}
           >
-            Marine rise restaurant sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore...
+           We prepare the best african dishes, Order food now from our restaurant and recieve what you see on the pictures
           </Text>
         </View>
       </View>
